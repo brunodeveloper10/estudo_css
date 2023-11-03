@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /**[feira*=sa] {*/
+        /* filho número 2 de outra tag*/
+             
+        /**[feira] {*/
+        
+        /*pega o primeiro filho de alguma tag que seja span*/    
+        /**p:nth-child(1) {    */
+         
+        /*pega os filhos impares filhos de section*/    
+        /* section > :nth-child(even) {  */
+
+        /* seleciona tantos os filhos ímpares de section quanto ul */    
+        /**section > :nth-child(even), ul {    */
+        
+        /* selecione os decendentes labels filhos de section que são ímpares */    
+        /**section > :nth-child(even) label { */
+        ol > li:nth-child(even) { 
+            color: #ff0;
+            background-color: #f77;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+                <li>Carne</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+                <li>Suco</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

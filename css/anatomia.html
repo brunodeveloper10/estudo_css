@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* propriedades com múltiplos valores*/
+            border: solid 5px navy;  /*shorthand property*/
+            font-family: Helvitica, sans-serif; /*trabalha com alternância, se não houver a primeira fonte a segunda é utilizada*/
+            /*funções*/
+            width: calc(100% - 100px);
+            background-color: rgb(34, 153, 189);
+            
+        }
+
+        /* usando pseudo-classes */
+        .seletor:hover {
+            /*
+                pseudo-classe é uma palavra chave adicionada a seletores que especifica um estado especial so elemento selecionado.
+                permite aplicar um estilo não apenas em relação ao conteúdo da árvore do documento, mas também em relação a fotores 
+                externos como status da navegação :checked, posição do mouse :hover
+            */
+            background-color: orangered;
+        }    
+
+        /*
+            pseudo-elemento: é uma palavra-chave adicionada a um seletor que permite você estilizar uma parte específica do elemento selecionado
+
+        */
+        .seletor::first-letter {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

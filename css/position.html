@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            color:;
+        }
+
+        .static {
+            /*
+                no position padrão que é o static não faz diferença o top e left
+                
+            */
+            top: 100px; 
+            left: 100px;
+            background-color: steelblue;
+            
+        }
+
+        .fixed {
+            /*  se eu rolar a página o elemento fica fixo com o position fixed */
+            position: fixed;
+            bottom: 30px;
+            right: 0px;    
+            background-color: tomato;
+        }
+
+        .relative1 {
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1 {
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

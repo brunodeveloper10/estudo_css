@@ -6,18 +6,87 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex-container div {
+            flex-basis: 20px; /*determina qual é o tamanho do elemento, ele será mais forte que a largura (width*/
+        }
+
+        .flex-container div:nth-child(4) {
+            /*grow shrink basics */
+        }
+        /*
+            flex-grow: controla o crescimento do flex-item para ocupar o restante do flex-container
+            flex-grow: 0 (padrão) - não cresce para ocupar o espaço restante do flex container
+            sen o limitador do menor tamanho do conteúdo ou do flex-basis
+
+            flex-grow: (1,2,3,4,5,...)
+            são usados para distribuir o crescimento proporcionalmente entre os itens flex.
+            Por exemplo: um item flex com flex-grow 2; cresce o dobro que o flex-grow 1
+            
+            Bruno - acredito funcionar assim... você divide o tamanho total pela quantidade de 
+            itens flex e multiplicado pelo valor do flex-grow 
+
+            Flex-shrink
+            Controla a redução do flex item quando necessário para exibir todos os itens flex sem 
+            sem estourar o flex container
+
+            flex-shrink: (padrão1  - O item flex se reduz para caber no container
+
+            flex-shrink: 0 - Elemento flex não reduzirá o tamanho sendo o tamanho mínimo 
+            o flex-basis (quando definido) ou o tamanho do item (width definido)
+
+            flex-shrink: numero > 1
+            São usados para difinir redução proporcional entre os itens flex. Por exemplo:
+            um item flex com flex-shrink: 5 reduz 5 vezes mais que um flex-shrink 1
+
+            Flex-basis:
+            Controla o tamanho base (inicial) de um item flex; sobrescreve o tamanho do item
+            (definido por width, padding, etc)
+
+            flex-basis: auto (padrão)
+            o tamanho base do flex é automático, logo será igual do item. Se o item não tiver
+            tamanho especificado (difinido pelo width, padding, etc), o tamanho será conforme 
+            o conteúdo
+
+            flex-basis: número em %, em px, etc
+            Defini um tamanho base específico, mas flexível para o flex-item
+
+            PS: se precisa diminuir (com flex-shrink: 1), o valor do flex-basis não será
+            o limitador e sim o tamanho do conteúdo do item
+
+            flex-basis: 0
+            Define como tamanho base do item flex o menor número possível conforme o tamanho
+            do item (ex: width definido) ou seu conteúdo
+
+            flex-basis: 0 e flex-grow:1 
+
+            o flex-basis 0 significa que o flex item terá o tamanho mínimo depois o flex-grow: 1
+            expande em igual proporção os dois itens (já que os 2 possuem o mesmo valor de flex-grow)
+        */
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel">3</div>
-        <div class="tag nolabel">4</div>
+    <div class="flex-container">
+        <div >1</div>
+        <div >2</div>
+        <div >3</div>
+        <div >4</div>
     </div>
-    <script src="js/tag.js"></script>
+
 </body>
 
 </html>

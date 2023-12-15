@@ -6,22 +6,60 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column; /*determina qual será o main axis (eixo principal) */
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            flex-direction: column; /*determina que o eixo y como principal então fica um embaixo do outro*/
+            flex-direction: row; /*determina que o eixo x é o principal então fica um dolado do outro*/
+            width: 30%;
+            height: 200px;
+            /*flex-wrap: wrap;*/
+
+            /**flex-flow: column-reverse; mistura a propriedade flex-direction com a flex-wrap**/
+            flex-flow: row wrap; 
+            justify-content: flex-start;
+            justify-content: flex-end; /* posiciona no final do main axis (end axis)*/
+            justify-content: center;
+            justify-content: space-around;
+            flex-direction: row-reverse;
+
+            /* Cross Axis*/
+            height: 400px;
+            align-items: stretch;
+            align-items: baseline;
+            align-items: flex-start;
+            align-items: flex-end;
+
+            /** mais de uma linha*/
+            align-content: flex-start;
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel big">3</div>
-        <div class="tag nolabel">4</div>
-        <div class="tag nolabel">5</div>
-        <div class="tag nolabel">6</div>
-        <div class="tag nolabel">7</div>
-        <div class="tag nolabel">8</div>
-        <div class="tag nolabel">9</div>
-        <div class="tag nolabel">10</div>
+    <div class="flex-container nolabel">
+        <div class="nolabel">1</div>
+        <div class="nolabel">2</div>
+        <div class="nolabel big">3</div>
+        <div class="nolabel">4</div>
+        <div class="nolabel">5</div>
+        <div class="nolabel">6</div>
+        <div class="nolabel">7</div>
+        <div class="nolabel">8</div>
+        <div class="nolabel">9</div>
+        <div class="nolabel">10</div>
     </div>
     <script src="js/tag.js"></script>
 </body>
